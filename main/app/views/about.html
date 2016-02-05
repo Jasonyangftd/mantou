@@ -1,7 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div>
@@ -16,10 +17,15 @@
             </div>
             <br/>
             <div class="jumbotron">
-                <p>
+                <p class="testImage">
                   I-Mantou I-Mantou
                 </p>
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        var div = document.querySelector('.jumbotron');
+        div.style.backgroundSize = '100%';
+        div.style.backgroundImage = "url('https://goo.gl/cfuAor')"
+    </script>
 </html>
