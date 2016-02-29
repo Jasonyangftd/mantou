@@ -9,7 +9,9 @@
     "bower": "~1.7.6"
   },
   "scripts": {
-      "postinstall": "./node_modules/bower/bin/bower install",
-      "start": "node server.js"
+      "postinstall": "./node_modules/bower/bin/bower install"
   },
+  "scripts": {
+    "start": "node server.js"
+  }
 }
