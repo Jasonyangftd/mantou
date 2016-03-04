@@ -167,7 +167,7 @@ function pulse(a, b, x) {
 ## smoothstep(a, b, x) ##
 
 Like `step(a, x)`, but provides a transition range between
-`a` and `b` that "fades in" the value.
+`a` and `b` that "fades in" || "fades out" the value.
 
 ### Example ###
 
@@ -181,4 +181,27 @@ Like `step(a, x)`, but provides a transition range between
 function smoothstep(a, b, x) {
     var t = clamp(0, 1, (x - a) / (b - a));
     return t * t * t * ((6 * t - 15) * t + 10);
+}
+
+
+/* ---
+
+## linstep(a, b, x) ##
+
+Like `step(a, x)`, but provides a linear transition range between
+`a` and `b` that maps the value.
+
+### Example ###
+
+    linstep(0, 1, -1.0); // returns 0
+    linstep(0, 1,  0.0); // returns 0
+    linstep(0, 1,  0.3); // returns 0.3
+    linstep(0, 1,  0.5); // returns 0.5
+    linstep(0, 1,  0.8); // returns 0.8
+    linstep(0, 1,  1.0); // returns 1
+    linstep(0, 1,  2.0); // returns 1
+
+--- */
+function linstep(a, b, x) {
+    return clamp(0, 1, (x - a) / (b - a));
 }
