@@ -92,3 +92,31 @@ within the interval `[0, 1]`.
 function lerp(a, b, t) {
     return a + clamp(0, 1, t) * (b - a);
 }
+
+/* ---
+
+## map(a, b, c, d, x) ##
+
+Maps a value `x` in range `[a, b]` proportionally into another
+range `[c, d]`.
+
+### Example ###
+
+    map(0, 1,  0, 100, 0.5); // returns 50
+    map(0, 1, 50, 100, 0.5); // returns 75
+    map(0, 1, 50, 100, 0.0); // returns 50
+    map(0, 1, 50, 100, 1.0); // returns 100
+    
+    // convert °F to °C given two known references:
+    // _____|___°F__|___°C____|
+    //  min | -40°F | -40°C   |
+    //  max | 100°F | 37.78°C |
+    function FtoC(f) {
+        //         minF maxF minC maxC
+        return map(-40, 100, -40, 37.78, f);
+    }
+
+--- */
+function map(a, b, c, d, x) {
+    return (x - a) / (b - a) * (d - c) + c;
+}
