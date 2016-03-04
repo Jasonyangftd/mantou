@@ -161,3 +161,24 @@ Equivalent to `step(a, x) - step(b, x)`.
 function pulse(a, b, x) {
     return step(a, x) - step(b, x);
 }
+
+/* ---
+
+## smoothstep(a, b, x) ##
+
+Like `step(a, x)`, but provides a transition range between
+`a` and `b` that "fades in" the value.
+
+### Example ###
+
+    smoothstep(0, 1, -1.0); // returns 0
+    smoothstep(0, 1,  0.0); // returns 0
+    smoothstep(0, 1,  0.5); // returns 0.5
+    smoothstep(0, 1,  1.0); // returns 1
+    smoothstep(0, 1,  2.0); // returns 1
+
+--- */
+function smoothstep(a, b, x) {
+    var t = clamp(0, 1, (x - a) / (b - a));
+    return t * t * t * ((6 * t - 15) * t + 10);
+}
