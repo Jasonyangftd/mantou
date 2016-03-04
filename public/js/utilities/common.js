@@ -56,3 +56,20 @@ function deep(d, s) {
         }
     }
 }
+
+/* ---
+
+## clamp(a, b, x) ##
+
+Limits the output of the input value `x` into the range `[a, b]`.
+
+### Example ###
+
+    clamp(0, 5,  6); // returns 5
+    clamp(0, 5, -1); // returns 0
+    clamp(0, 5,  3); // returns 3
+
+--- */
+function clamp(a, b, x) {
+    return Math.max(a, Math.min(b, x));
+}
