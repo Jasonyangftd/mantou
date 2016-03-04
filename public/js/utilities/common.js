@@ -33,3 +33,26 @@ function inherit(C, P) {
     // Reset constructor, so instanceof doesn't show that instances of C are instances of P.
     C.prototype.constructor = C;
 }
+
+function extend(dst, src) {
+    for (var i=1; i<arguments.length; i++) {
+        var src = arguments[i];
+        if (src instanceof Object) {
+            for (var k in src) {
+                dst[k] = src[k];
+            }
+        }
+    }
+    return dst;
+}
+
+// Deep extend
+function deep(d, s) {
+    for (var p in s) {
+        if (d[p] instanceof Object && s[p] instanceof Object) {
+            deep(d[p], s[p]);
+        } else {
+            d[p] = s[p];
+        }
+    }
+}
