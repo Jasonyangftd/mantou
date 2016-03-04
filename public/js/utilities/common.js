@@ -120,3 +120,23 @@ range `[c, d]`.
 function map(a, b, c, d, x) {
     return (x - a) / (b - a) * (d - c) + c;
 }
+
+/* ---
+
+## step(a, x) ##
+
+Returns `1` if `x` >= `a`, `0` otherwise.
+
+### Example ###
+
+    step(0,  -1); // returns 0
+    step(0,   0); // returns 1
+    step(0,   2); // returns 1
+    step(10,  5); // returns 0
+    step(10, 10); // returns 1
+    step(10, 11); // returns 1
+
+--- */
+function step(a, x) {
+    return x < a ? 0 : 1;
+}
