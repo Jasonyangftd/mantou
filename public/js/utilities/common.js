@@ -73,3 +73,22 @@ Limits the output of the input value `x` into the range `[a, b]`.
 function clamp(a, b, x) {
     return Math.max(a, Math.min(b, x));
 }
+
+/* ---
+
+## lerp(a, b, t) ##
+
+Linearly interpolates between values `a` and `b` given `t`
+within the interval `[0, 1]`.
+
+### Example ###
+
+    lerp(10, 20, 0.5); // returns 15
+    lerp(10, 20, 0.1); // returns 11
+    lerp(10, 20, 0.0); // returns 10
+    lerp(10, 20, 1.0); // returns 20
+
+--- */
+function lerp(a, b, t) {
+    return a + clamp(0, 1, t) * (b - a);
+}
