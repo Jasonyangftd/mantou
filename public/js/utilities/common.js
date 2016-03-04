@@ -140,3 +140,24 @@ Returns `1` if `x` >= `a`, `0` otherwise.
 function step(a, x) {
     return x < a ? 0 : 1;
 }
+
+/* ---
+
+## pulse(a, b, x) ##
+
+Returns `1` if `a` <= `x` <= `b`, `0` otherwise.
+
+Equivalent to `step(a, x) - step(b, x)`.
+
+### Example ###
+
+    pulse(1, 3, 0); // returns 0
+    pulse(1, 3, 1); // returns 1
+    pulse(1, 3, 2); // returns 1
+    pulse(1, 3, 3); // returns 1
+    pulse(1, 3, 5); // returns 0
+
+--- */
+function pulse(a, b, x) {
+    return step(a, x) - step(b, x);
+}
